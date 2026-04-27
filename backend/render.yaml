@@ -1,0 +1,24 @@
+services:
+  - type: web
+    name: apuf-backend
+    env: java
+    buildCommand: mvn clean package -DskipTests
+    startCommand: java -jar target/apuf-backend-1.0.0.jar
+    plan: free
+    envVars:
+      - key: DATABASE_URL
+        sync: false
+      - key: DATABASE_USER
+        sync: false
+      - key: DATABASE_PASSWORD
+        sync: false
+      - key: JWT_SECRET
+        generateValue: true
+      - key: CLOUDINARY_CLOUD_NAME
+        sync: false
+      - key: CLOUDINARY_API_KEY
+        sync: false
+      - key: CLOUDINARY_API_SECRET
+        sync: false
+      - key: CORS_ORIGINS
+        value: https://apuf-feira.vercel.app
