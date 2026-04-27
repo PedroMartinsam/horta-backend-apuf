@@ -1,0 +1,12 @@
+# Exported from Render on 2026-04-27T18:46:55Z
+version: "1"
+services:
+- type: web
+  name: horta-backend-apuf-1
+  runtime: node
+  repo: https://github.com/PedroMartinsam/horta-backend-apuf
+  plan: free
+  region: ohio
+  buildCommand: npm install
+  startCommand: npm start
+  autoDeployTrigger: commit
